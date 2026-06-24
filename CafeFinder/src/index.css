@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f6f7fb;
+  font-family: Arial, sans-serif;
+  color: #222;
+}
+
+.navbar {
+  height: 70px;
+  padding: 0 2.5rem;
+  background: white;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  border-bottom: 1px solid #e5e5e5;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #222;
+  font-weight: 600;
+}
+
+.navbar button {
+  border: none;
+  background: #ef4444;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.home-container {
+  padding: 2.5rem;
+}
+
+.home-container h1 {
+  margin-bottom: 1.5rem;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.card {
+  background: white;
+  padding: 1.2rem;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  transition: 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card h2 {
+  margin-bottom: 0.6rem;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+form {
+  background: white;
+  padding: 2rem;
+  border-radius: 14px;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+}
+
+form input {
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+form button,
+button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+form button:hover,
+button:hover {
+  opacity: 0.9;
+}
