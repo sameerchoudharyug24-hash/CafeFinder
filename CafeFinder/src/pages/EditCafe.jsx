@@ -16,7 +16,7 @@ const EditCafe = () => {
   });
 
   useEffect(() => {
-    fetch(`http://import.meta.env.VITE_API_URL/cafes/${id}`)
+    fetch(`${import.meta.env.VITE_API_URL}/cafes/${id}`)
       .then((res) => res.json())
       .then((data) => setFormData(data))
       .catch((err) => console.log(err));
@@ -32,17 +32,17 @@ const EditCafe = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    await fetch(`http://import.meta.env.VITE_API_URL/cafes/${id}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: localStorage.getItem("token"),
-      },
-      body: JSON.stringify({
-        ...formData,
-        rating: Number(formData.rating),
-      }),
-    });
+    await fetch(`${import.meta.env.VITE_API_URL}/cafes/${id}`, {
+  method: "PATCH",
+  headers: {
+    "Content-Type": "application/json",
+    Authorization: localStorage.getItem("token"),
+  },
+  body: JSON.stringify({
+    ...formData,
+    rating: Number(formData.rating),
+  }),
+});
 
     alert("Cafe updated successfully");
     navigate(`/cafe/${id}`);

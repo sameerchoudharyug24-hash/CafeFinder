@@ -20,12 +20,12 @@ const AddCafe = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-   await fetch("http://import.meta.env.VITE_API_URL/cafes", {
+   await fetch(`${import.meta.env.VITE_API_URL}/cafes`, {
   method: "POST",
   headers: {
-    "Content-Type": "application/json",
-    Authorization: localStorage.getItem("token"),
-  },
+  "Content-Type": "application/json",
+  Authorization: localStorage.getItem("token"),
+},
   body: JSON.stringify({
     ...formData,
     rating: Number(formData.rating),

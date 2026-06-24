@@ -7,23 +7,23 @@ const CafeDetails = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`http://import.meta.env.VITE_API_URL/cafes/${id}`)
+    fetch(`${import.meta.env.VITE_API_URL}/cafes/${id}`)
       .then((res) => res.json())
       .then((data) => setCafe(data))
       .catch((err) => console.log(err));
   }, [id]);
 
   const handleDelete = async () => {
-    await fetch(`http://import.meta.env.VITE_API_URL/cafes/${id}`, {
-      method: "DELETE",
-      headers: {
-        Authorization: localStorage.getItem("token"),
-      },
-    });
+  await fetch(`${import.meta.env.VITE_API_URL}/cafes/${id}`, {
+    method: "DELETE",
+    headers: {
+      Authorization: localStorage.getItem("token"),
+    },
+  });
 
-    alert("Cafe deleted successfully");
-    navigate("/");
-  };
+  alert("Cafe deleted successfully");
+  navigate("/");
+};
 
   if (!cafe) {
     return <h1>Loading...</h1>;

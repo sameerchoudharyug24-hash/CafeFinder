@@ -8,7 +8,7 @@ const Home = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://import.meta.env.VITE_API_URL/cafes")
+    fetch(`${import.meta.env.VITE_API_URL}/cafes`)
       .then((res) => res.json())
       .then((data) => {
         setCafes(data);
